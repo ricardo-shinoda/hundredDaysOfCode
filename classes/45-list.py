@@ -26,4 +26,5 @@ fruits = ["banana", "mango", "orange", "lemon"]
 vegetables = ["letuce", "potatoe", "onion"]
 
 dirty_dozen = [fruits, vegetables]
+# in this case it will choose list on index 1 and item on list index 2
 print(dirty_dozen[1][2])
