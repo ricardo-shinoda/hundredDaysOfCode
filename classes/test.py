@@ -1,12 +1,7 @@
-list = [2, 3, 4, 5, 2, 3]
-size = len(list)
-number = 0
+list = [2, 0, 9, 10, 1000, '_']
 
-# print(list[0])
-# print(list[size])
-# print(size)
+while '_' in list:
+    for i in list:
+        print(i)
 
-for i in range(size):
-    print(i, list[number])
-    number += 1
-    # print(i)
+# print(list)
