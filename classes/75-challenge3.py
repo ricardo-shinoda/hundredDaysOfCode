@@ -1,3 +1,4 @@
+from words import words
 import random
 
 stages = ['''
@@ -90,5 +91,7 @@ if '_' not in display:
     print(f'You still have {life} life')
 else:
     print('Game Over')
+
+print(list_words)
 
 # print(men)
