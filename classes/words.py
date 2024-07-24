@@ -1,4 +1,4 @@
-words = [
+list_words = [
     "abacus",
     "bizarre",
     "catalyst",
@@ -182,5 +182,3 @@ words = [
     "yonder",
     "zealous"
 ]
-
-lista = [1, 2, 3]

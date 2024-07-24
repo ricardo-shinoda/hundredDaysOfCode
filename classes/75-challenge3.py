@@ -1,68 +1,11 @@
-from words import words
+from words import list_words
+from stages import stage_list
 import random
 
-stages = ['''
-  +----+
-  |    |
-  0    |
-/ | \  |
- / \   |
-       |
-===========''',
-          '''
-  +----+
-  |    |
-  0    |
-/ | \  |
- /     |
-       |
-===========''',
-          '''
-  +----+
-  |    |
-  0    |
-/ | \  |
-       |
-       |
-===========''',
-          '''
-  +----+
-  |    |
-  0    |
-/ |    |
-       |
-       |
-===========''',
-          '''
-  +----+
-  |    |
-  0    |
-  |    |
-       |
-       |
-===========''',
-          '''
-  +----+
-  |    |
-  0    |
-       |
-       |
-       |
-===========''',
-          '''
-  +----+
-  |    |
-       |
-       |
-       |
-       |
-===========''']
-
-
-word_list = ["banana", "clothes", "car"]
-men = len(stages)
+# word_list = ["banana", "clothes", "car"]
+men = len(stage_list)
 # Choose the word to be ckeched.
-random_word = random.choice(word_list)
+random_word = random.choice(list_words)
 
 display = []
 life = 6
@@ -71,18 +14,23 @@ life = 6
 for i in random_word:
     display.append('_')
 
+list_guessed = []
 # Look in every single letter from the chosen word and compare with the chosen letter
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
     for i in range(len(random_word)):
         letter = random_word[i]
+        if letter in list_guessed:
+            print(f'The letter: {letter} has already been chosen')
         if letter == guess:
             display[i] = guess
     if guess not in random_word:
         life = (life - 1)
         men -= 1
-        print(stages[men - 1])
+        print(stage_list[men - 1])
+    list_guessed.append(guess)
     print(display)
+    # print(f'This is the word guessed: {list_guessed}')
 
 
 if '_' not in display:
@@ -92,6 +40,6 @@ if '_' not in display:
 else:
     print('Game Over')
 
-print(list_words)
+print(f'The word was: {random_word} ')
 
 # print(men)
