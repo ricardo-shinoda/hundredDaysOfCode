@@ -1,6 +1,6 @@
 from words import list_words
 from stages import stage_list
-from replit import clear
+# from replit import clear
 import random
 
 # word_list = ["banana", "clothes", "car"]
@@ -20,13 +20,14 @@ list_guessed = []
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
 
-    clear()
+    # clear()
     for i in range(len(random_word)):
         letter = random_word[i]
         if letter == guess:
             display[i] = guess
         if letter in list_guessed:
             print(f'The letter: {letter} has already been chosen')
+        break
     if guess not in random_word:
         life = (life - 1)
         men -= 1
