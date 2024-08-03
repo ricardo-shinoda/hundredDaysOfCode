@@ -18,6 +18,7 @@ list_guessed = []
 # Look in every single letter from the chosen word and compare with the chosen letter
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
+    print(f'The chosen word is: {random_word}')
     for i in range(len(random_word)):
         letter = random_word[i]
         if letter in list_guessed:
