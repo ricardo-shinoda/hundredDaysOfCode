@@ -44,5 +44,3 @@ else:
     print('Game Over')
 
 print(f'The word was: {random_word} ')
-
-# print(men)
