@@ -1,6 +1,5 @@
 from words import list_words
 from stages import stage_list
-# from replit import clear
 import random
 
 # word_list = ["banana", "clothes", "car"]
@@ -19,19 +18,15 @@ list_guessed = []
 # Look in every single letter from the chosen word and compare with the chosen letter
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
-<<<<<<< HEAD
-    print(f'The chosen word is: {random_word}')
-=======
+    print(random_word)
 
-    # clear()
->>>>>>> d71ca8d895249c034cf89109a9c7c4276f67b427
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
     for i in range(len(random_word)):
         letter = random_word[i]
         if letter == guess:
             display[i] = guess
-        if letter in list_guessed:
-            print(f'The letter: {letter} has already been chosen')
-        break
     if guess not in random_word:
         life = (life - 1)
         men -= 1
