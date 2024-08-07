@@ -1,6 +1,5 @@
 from words import list_words
 from stages import stage_list
-# from replit import clear
 import random
 
 # word_list = ["banana", "clothes", "car"]
@@ -19,15 +18,14 @@ list_guessed = []
 # Look in every single letter from the chosen word and compare with the chosen letter
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
-    print(f'the word is {random_word}')
-    # clear()
+    print(random_word)
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
     for i in range(len(random_word)):
         letter = random_word[i]
         if letter == guess:
             display[i] = guess
-        if letter in list_guessed:
-            print(f'The letter: {letter} has already been chosen')
-        # break
     if guess not in random_word:
         life = (life - 1)
         men -= 1
@@ -45,5 +43,3 @@ else:
     print('Game Over')
 
 print(f'The word was: {random_word} ')
-
-# fixed the repeated guessed word, need to work on repeated wrong word and avoid using lives on the same word.
