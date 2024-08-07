@@ -19,7 +19,7 @@ list_guessed = []
 # Look in every single letter from the chosen word and compare with the chosen letter
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
-
+    print(f'the word is {random_word}')
     # clear()
     for i in range(len(random_word)):
         letter = random_word[i]
@@ -27,7 +27,7 @@ while '_' in display and life > 0:
             display[i] = guess
         if letter in list_guessed:
             print(f'The letter: {letter} has already been chosen')
-        break
+        # break
     if guess not in random_word:
         life = (life - 1)
         men -= 1
@@ -46,4 +46,4 @@ else:
 
 print(f'The word was: {random_word} ')
 
-# print(men)
+# fixed the repeated guessed word, need to work on repeated wrong word and avoid using lives on the same word.
