@@ -13,12 +13,12 @@ new_alphabet = []
 def encrypt(original_text, shift_amount):
     for i in original_text:
         position = alphabet.index(i)
-        target = position + (shift_amount % len(alphabet))
-        result = alphabet[target]
-        new_alphabet.append(result)
+        target = (position + shift_amount) % len(alphabet)
+        value = alphabet[target]
+        new_alphabet.append(value)
         text_output = ''.join(new_alphabet)
 
     print(text_output)
 
 
-encrypt('hello', 1)
+encrypt('z', 9)
