@@ -7,26 +7,18 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 # shift = int(input("Type the shift number:\n"))
 
 new_alphabet = []
-# TODO-1  create a function called encrypt() that takes original_text and shift_amount as 2 inputs
+# TODO-2  create a function called encrypt() that takes original_text and shift_amount as 2 inputs
 
 
 def encrypt(original_text, shift_amount):
-    # text = input(f'This is original_text {original_text}')
-    # amount = input(f'This is shift_amount {shift_amount}')
-    # print(text)
-    # print(amount)
     for i in original_text:
-        # print(i)
-        # position = (i).index()
         position = alphabet.index(i)
-        target = position + shift_amount
-        # print(position)
-        # print(target)
-        test = alphabet[target]
-        new_alphabet.append(test)
-        # print(test)
+        target = position + (shift_amount % len(alphabet))
+        result = alphabet[target]
+        new_alphabet.append(result)
+        text_output = ''.join(new_alphabet)
 
-    print(new_alphabet)
+    print(text_output)
 
 
 encrypt('hello', 1)
