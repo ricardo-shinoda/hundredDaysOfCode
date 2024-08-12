@@ -8,13 +8,12 @@ shift = int(input("Type the shift number:\n"))
 
 encode_text = []
 decode_text = []
-# TODO-2  create a function called encrypt() that takes original_text and shift_amount as 2 inputs
 
 if direction == "encode":
     def encrypt(original_text, shift_amount):
         for i in original_text:
             position = alphabet.index(i) + shift_amount
-            # return remainer so i counst only the last turn
+            # return remainer so it counts only the last turn
             target = position % len(alphabet)
             value = alphabet[target]
             encode_text.append(value)
