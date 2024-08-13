@@ -9,15 +9,17 @@ shift = int(input("Type the shift number:\n"))
 encode_text = []
 decode_text = []
 
-if direction == "encode":
-    def encrypt(original_text, shift_amount):
-        for i in original_text:
-            position = alphabet.index(i) + shift_amount
-            # return remainer so it counts only the last turn
-            target = position % len(alphabet)
-            value = alphabet[target]
-            encode_text.append(value)
-            text_output = ''.join(encode_text)
+
+def caesar(direction_imput, text_imput, shift_imput):
+    if direction_imput == "encode":
+        def encrypt():
+            for i in text_imput:
+                position = alphabet.index(i) + shift_imput
+                # return remainer so it counts only the last turn
+                target = position % len(alphabet)
+                value = alphabet[target]
+                encode_text.append(value)
+                text_output = ''.join(encode_text)
 
             print(f'This is the encode output: {text_output}')
         encrypt()
