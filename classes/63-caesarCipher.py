@@ -8,31 +8,33 @@ shift = int(input("Type the shift number:\n"))
 
 encode_text = []
 decode_text = []
-# TODO-2  create a function called encrypt() that takes original_text and shift_amount as 2 inputs
 
-if direction == "encode":
-    def encrypt(original_text, shift_amount):
-        for i in original_text:
-            position = alphabet.index(i) + shift_amount
-            # return remainer so i counst only the last turn
-            target = position % len(alphabet)
-            value = alphabet[target]
-            encode_text.append(value)
-            text_output = ''.join(encode_text)
 
-        print(f'This is the encode output: {text_output}')
+def caesar(direction_imput, text_imput, shift_imput):
+    if direction_imput == "encode":
+        def encrypt():
+            for i in text_imput:
+                position = alphabet.index(i) + shift_imput
+                # return remainer so it count only the last turn
+                target = position % len(alphabet)
+                value = alphabet[target]
+                encode_text.append(value)
+                text_output = ''.join(encode_text)
 
-    encrypt(original_text=text, shift_amount=shift)
+            print(f'This is the encode output: {text_output}')
+        encrypt()
 
-elif direction == "decode":
-    def decrypt(original_text, shift_amout):
-        for i in original_text:
-            position = alphabet.index(i) - shift_amout
-            target = position % len(alphabet)
-            value = alphabet[target]
-            decode_text.append(value)
-            text_output = ''.join(decode_text)
+    elif direction_imput == "decode":
+        def decrypt():
+            for i in text_imput:
+                position = alphabet.index(i) - shift_imput
+                target = position % len(alphabet)
+                value = alphabet[target]
+                decode_text.append(value)
+                text_output = ''.join(decode_text)
 
-        print(f'This is the decode output: {text_output}')
+            print(f'This is the decode output: {text_output}')
+        decrypt()
 
-    decrypt(original_text=text, shift_amout=shift)
+
+caesar(direction_imput=direction, text_imput=text, shift_imput=shift)
