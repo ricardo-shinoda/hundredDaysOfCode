@@ -40,4 +40,13 @@ def caesar(direction_imput, text_imput, shift_imput):
         decrypt()
 
 
+continue_encoding = input(
+    "Type 'Yes' if you want to continue encoding/decoding words, otherwise type 'No'")
+
+
+if continue_encoding == 'Yes':
+    caesar(direction_imput=direction, text_imput=text, shift_imput=shift)
+else:
+    print("This is the end of the encoding/decoding\n")
+
 caesar(direction_imput=direction, text_imput=text, shift_imput=shift)
