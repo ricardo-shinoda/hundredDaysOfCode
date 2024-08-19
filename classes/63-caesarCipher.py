@@ -10,7 +10,6 @@ shift = int(input("Type the shift number:\n"))
 def caesar(direction_imput, text_imput, shift_imput):
     encode_text = []
     decode_text = []
-    coringa = []
     if direction_imput == "encode":
         def encrypt():
             for i in text_imput:
@@ -20,16 +19,11 @@ def caesar(direction_imput, text_imput, shift_imput):
                     target = position % len(alphabet)
                     value = alphabet[target]
                     encode_text.append(value)
-                    text_output = ''.join(encode_text)
                 else:
-                    coringa.append(i)
+                    encode_text.append(i)
 
-                    coringa_output = ''.join(coringa)
-
-            if i in alphabet:
-                print(f'This is the encode output: {text_output}')
-            else:
-                print(f'This is the fixed code: {coringa_output}')
+            text_output = ''.join(encode_text)
+            print(f'This is the decode output: {text_output}')
 
         encrypt()
 
