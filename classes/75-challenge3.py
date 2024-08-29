@@ -19,7 +19,6 @@ list_guessed = []
 while '_' in display and life > 0:
     guess = input("Choose one letter: \n").lower()
     print(random_word)
-
     if guess in display:
         print(f"You've already guessed {guess}")
 
