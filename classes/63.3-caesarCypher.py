@@ -9,15 +9,20 @@ shift = int(input("Type the shift number:\n"))
 
 def caesar(direction_imput, text_imput, shift_imput):
     encode_text = []
-    if direction_imput == "decode":
-        shift_imput *= -1
     for i in text_imput:
-        position = alphabet.index(i) + shift_imput
-        # return remainer so it counts only the last turn
-        target = position % len(alphabet)
-        value = alphabet[target]
-        encode_text.append(value)
-        text_output = ''.join(encode_text)
+        if i not in alphabet:
+            encode_text.append(i)
+            text_output = ''.join(encode_text)
+        else:
+            if direction_imput == "decode":
+                shift_imput *= -1
+
+            position = alphabet.index(i) + shift_imput
+            # return remainer so it counts only the last turn
+            target = position % len(alphabet)
+            value = alphabet[target]
+            encode_text.append(value)
+            text_output = ''.join(encode_text)
 
     print(f'This is the {direction_imput}d output: {text_output}')
     replay = input("Do you want to go again?\n").lower()
