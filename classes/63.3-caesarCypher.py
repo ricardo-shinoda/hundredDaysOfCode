@@ -6,11 +6,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 initial_text = text2art('Caesar Cypher', font='standard')
 print(initial_text)
 
-direction = input(
-    "Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
 
 def caesar(direction_imput, text_imput, shift_imput):
     encode_text = []
@@ -30,17 +25,20 @@ def caesar(direction_imput, text_imput, shift_imput):
             text_output = ''.join(encode_text)
 
     print(f'This is the {direction_imput}d output: {text_output}')
+
+
+should_continue = True
+
+while should_continue:
+    direction = input(
+        "Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+
+    caesar(direction_imput=direction,
+           text_imput=text, shift_imput=shift)
+
     replay = input("Do you want to go again?\n").lower()
-
-    if replay == 'yes':
-        direction = input(
-            "Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
-        caesar(direction_imput=direction,
-               text_imput=text, shift_imput=shift)
-    else:
+    if replay == "no":
+        should_continue = False
         print("End of the game")
-
-
-caesar(direction_imput=direction, text_imput=text, shift_imput=shift)
