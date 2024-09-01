@@ -9,14 +9,13 @@ print(initial_text)
 
 def caesar(direction_imput, text_imput, shift_imput):
     encode_text = []
+    if direction_imput == "decode":
+        shift_imput *= -1
     for i in text_imput:
         if i not in alphabet:
             encode_text.append(i)
             text_output = ''.join(encode_text)
         else:
-            if direction_imput == "decode":
-                shift_imput *= -1
-
             position = alphabet.index(i) + shift_imput
             # return remainer so it counts only the last turn
             target = position % len(alphabet)
