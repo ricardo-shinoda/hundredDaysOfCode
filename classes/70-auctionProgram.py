@@ -1,5 +1,5 @@
 
-
+from os import system
 bid_users = {
 
 }
@@ -13,16 +13,19 @@ def auction():
         ammount = input("what is your bid:\n")
         bid_users[name] = ammount
         quest = input('Do you want to add another use?\n')
+        #! to clear  terminal
+        system("clear")
 
         if quest == 'no':
             replay = False
 
     for i in bid_users:
         highest_bid = 0
-        print(bid_users[0][0])
+        base = {}
+        if int(bid_users[i]) > highest_bid:
+            base[i] = bid_users[i]
 
-    # print(highest_bid)
+    print(f'The winner is:', i, 'with a bid of:', base[i])
 
 
 auction()
-# print(bid_users)
