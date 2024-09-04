@@ -1,18 +1,16 @@
 
 from os import system
-bid_users = {
-
-}
+bid_users = {}
 
 
 def auction():
     replay = True
 
-    while replay == True:
-        name = input('What is your name?:\n')
-        ammount = input("what is your bid:\n")
+    while replay:
+        name = input('What is your name?: ')
+        ammount = input("what is your bid: $")
         bid_users[name] = ammount
-        quest = input('Do you want to add another use?\n')
+        quest = input('Do you want to add another use?\n').lower()
         #! to clear  terminal
         system("clear")
 
