@@ -25,3 +25,11 @@ calc = {
 
 
 print(calc["*"](4, 8))
+
+# program asks the user to type the first number
+first_number = int(input("What is the first number?\n"))
+operator = input("What is the mathematical operator?\n")
+second_number = int(input("What is the second number?\n"))
+
+
+print(calc[operator](first_number, second_number))
