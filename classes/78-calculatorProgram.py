@@ -24,4 +24,4 @@ calc = {
 }
 
 
-print(calc["+"](1, 3))
+print(calc["*"](4, 8))
