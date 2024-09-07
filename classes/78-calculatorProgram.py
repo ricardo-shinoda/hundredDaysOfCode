@@ -23,10 +23,9 @@ calc = {
     "/": divide,
 }
 
-
-# print(calc["*"](4, 8))
-
 # program asks the user to type the first number
+
+
 def first_count():
     first_number = int(input("What is the first number?\n"))
     operator = input("What is the mathematical operator?\n")
@@ -40,8 +39,11 @@ print(result)
 cont_previous = input(
     "Do you want to continue using the previous result?\n").lower()
 
-if cont_previous == "yes":
+while cont_previous == "yes":
     operator = input("What is the mathematical operator?\n")
     second_number = int(input("What is the second number?\n"))
-    # print(calc[operator](result, second_number))
     print(calc[operator](result, second_number))
+    cont_previous = input(
+        "Do you want to continue using the previous result?\n").lower()
+result = first_count()
+print(result)
