@@ -28,7 +28,8 @@ calc = {
 
 def first_count():
     first_number = int(input("What is the first number?\n"))
-    operator = input("What is the mathematical operator?\n")
+    operator = input(
+        "Chose one mathematical operator?\n+\n-\n*\n/\n")
     second_number = int(input("What is the second number?\n"))
     return calc[operator](first_number, second_number)
 
@@ -40,7 +41,7 @@ cont_previous = input(
     "Do you want to continue using the previous result?\n").lower()
 
 while cont_previous == "yes":
-    operator = input("What is the mathematical operator?\n")
+    operator = input("Chose one mathematical operator?\n+\n-\n*\n/\n")
     second_number = int(input("What is the second number?\n"))
     print(calc[operator](result, second_number))
     cont_previous = input(
