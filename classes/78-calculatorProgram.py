@@ -35,32 +35,25 @@ def first_count():
 
 
 result = first_count()
-print(result)
+print(f'this is result: ', result)
 
 cont_previous = input(
     "Do you want to continue using the previous result?\n").lower()
 
-while cont_previous == "yes":
-    result2 = result
-    second_count(calc[operator](result), second_number)
-    # print(calc[operator](result2, second_number))
-    cont_previous = input(
-        "Do you want to continue using the previous result?\n").lower()
+if cont_previous == 'yes':
 
+    def second_count():
+        second = result
+        operator = input("Chose one mathematical operator?\n+\n-\n*\n/\n")
+        second_number = int(input("What is the second number?\n"))
+        return calc[operator](second, second_number)
 
-def second_count():
-    operator = input("Chose one mathematical operator?\n+\n-\n*\n/\n")
-    second_number = int(input("What is the second number?\n"))
-    return calc[operator](result)(second_number)
+    output = second_count()
+    second = output
+    print(f'this is output: ', output)
 
+elif cont_previous == 'no':
+    rerun = first_count()
+    # print(loop_again)
 
-result2 = second_count()
-print(result2)
-
-
-# result2 = second_count()
-
-# result = {}
-# print(result)
-result = first_count()
-print(result)
+cont_previous = input('do you want to continure the loop?\n')
