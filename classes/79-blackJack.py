@@ -16,6 +16,7 @@ def black_jack():
         my_cards = [result1, result2]
         my_sum = sum(my_cards)
         computer_card = random.choice(cards)
+        computer_card_list = [computer_card]
 
     print(f'Your cards: ', my_cards, 'current score is: ', my_sum)
     print(f"Computer's first card: ", computer_card)
@@ -33,6 +34,9 @@ def black_jack():
             my_cards.append(new_number)
             print(f'Your cards: ', my_cards,
                   'current score is: ', sum(my_cards))
+            computer_card_list.append(random.choice(cards))
+            print(f"Computer's card is: ", computer_card_list,
+                  "current score is: ", sum(computer_card_list))
         else:
             play_again = False
 
