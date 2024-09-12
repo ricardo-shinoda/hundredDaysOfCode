@@ -37,8 +37,19 @@ def black_jack():
             computer_card_list.append(random.choice(cards))
             print(f"Computer's card is: ", computer_card_list,
                   "current score is: ", sum(computer_card_list))
+            if sum(my_cards) or sum(computer_card_list) <= 21:
+                play_again = False
+                print(f'This is my: ', sum(my_cards),
+                      'This is computers: ', sum(computer_card_list))
         else:
             play_again = False
+
+            while sum(computer_card_list) < 21:
+                res = random.choice(cards)
+                print(f'This is res: ', res)
+                computer_card_list.append(res)
+
+            print(f'This is the final computer score: ', sum(computer_card_list))
 
 
 black_jack()
