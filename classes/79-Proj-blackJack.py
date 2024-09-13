@@ -1,12 +1,12 @@
 import random
-from art import *
+# from art import *
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
 def black_jack():
-    title = text2art("BlackJack")
-    print(title)
+    # title = text2art("BlackJack")
+    # print(title)
 
     play_again = True
     start = input(
@@ -20,6 +20,9 @@ def black_jack():
         my_sum = sum(my_cards)
         computer_card = random.choice(cards)
         computer_card_list = [computer_card]
+
+        # my_final = print('Your final hand: ', sum(my_cards))
+        # comp_final = print("Computer's final hand: ", sum(computer_card_list))
 
         if sum(my_cards) >= 21 or sum(computer_card_list) >= 21:
             play_again = False
