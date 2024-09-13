@@ -1,9 +1,12 @@
 import random
+from art import *
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
 def black_jack():
+    title = text2art("BlackJack")
+    print(title)
 
     play_again = True
     start = input(
@@ -17,6 +20,23 @@ def black_jack():
         my_sum = sum(my_cards)
         computer_card = random.choice(cards)
         computer_card_list = [computer_card]
+
+        if sum(my_cards) >= 21 or sum(computer_card_list) >= 21:
+            play_again = False
+            print(f'This is my: ', sum(my_cards),
+                  'This is computers: ', sum(computer_card_list))
+            if sum(my_cards) > 21:
+                print('Your final hand: ', sum(my_cards))
+                print("Computer's final hand: ", sum(computer_card_list))
+                print('You went over, you lose')
+            elif sum(computer_card_list) > 21:
+                print('Your final hand: ', sum(my_cards))
+                print("Computer's final hand: ", sum(computer_card_list))
+                print("Computer went over, you win")
+            elif sum(my_cards) == 21 and sum(computer_card_list) == 21:
+                print('Your final hand: ', sum(my_cards))
+                print("Computer's final hand: ", sum(computer_card_list))
+                print("It's a draw!")
 
     print(f'Your cards: ', my_cards, 'current score is: ', my_sum)
     print(f"Computer's first card: ", computer_card)
@@ -49,6 +69,10 @@ def black_jack():
                     print('Your final hand: ', sum(my_cards))
                     print("Computer's final hand: ", sum(computer_card_list))
                     print("Computer went over, you win")
+                elif sum(my_cards) == 21 and sum(computer_card_list) == 21:
+                    print('Your final hand: ', sum(my_cards))
+                    print("Computer's final hand: ", sum(computer_card_list))
+                    print("It's a draw!")
         else:
             play_again = False
 
