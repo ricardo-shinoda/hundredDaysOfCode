@@ -1,11 +1,15 @@
 # Glocal scope (not within another function)
-enemies = 1
+enemies = "Sheleton"
 
 # local scope (within a function)
+print(enemies)
+
+# use global to modify a global scope, but not usefull
 
 
 def increase_enemines():
-    enemies = 2
+    global enemies
+    enemies = "Zombie"
     print(f"Enemies inside fucntion: {enemies}")
 
 
