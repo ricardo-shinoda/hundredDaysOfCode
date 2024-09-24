@@ -11,4 +11,4 @@ ________________________________________________
 4 - [x] Print the number of initial attempts
 5 - [x] Add an input with "Make a guess: "
 6 - [x] Maybe add an for loop with the number of guesses chosen on the level of the game
-7 - [xgi] Add an if statement saying that is "Too high", "Too low" or "You got it! The answer was xx." 
+7 - [x] Add an if statement saying that is "Too high", "Too low" or "You got it! The answer was xx." 
