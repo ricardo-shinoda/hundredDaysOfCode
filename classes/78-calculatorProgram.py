@@ -31,7 +31,7 @@ calc = {
 
 
 def calculator():
-    label = text2art("Calculator")
+    label = text2art("Lucas Shinoda")
     print(label)
 
     should_accumulate = True
