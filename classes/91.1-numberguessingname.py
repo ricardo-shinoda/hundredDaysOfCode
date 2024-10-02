@@ -33,7 +33,7 @@ tentative = int(input('Make a guess: '))
 
 
 def check_guess(user_try, computer_try):
-    global int(rounds)
+    global rounds
     if user_try == computer_try:
         print("You got it right!")
     elif user_try > computer_try:
