@@ -5,7 +5,7 @@ from random import randint
 choosen = randint(1, 100)
 EASY = 10
 HARD = 5
-rounds = ''
+rounds = 0
 
 print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
@@ -33,7 +33,7 @@ tentative = int(input('Make a guess: '))
 
 
 def check_guess(user_try, computer_try):
-    global int(rounds)
+    global rounds
     if user_try == computer_try:
         print("You got it right!")
     elif user_try > computer_try:
