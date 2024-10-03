@@ -17,36 +17,35 @@ print(choosen)
 def level_game():
     level = input("Choose a difficulty. Type 'easy' or 'hard': \n")
     if level == 'easy':
-        rounds = EASY
+        return EASY
     elif level == 'hard':
-        rounds = HARD
+        return HARD
 
 
-level_game()
+rounds = level_game()
 
+while rounds >= 1:
 
-# Let the user guess a number
+    # Let the user guess a number
 
-tentative = int(input('Make a guess: '))
+    tentative = int(input('Make a guess: '))
 
-# Fuction to ckeck users guess against actual  answers
+    # Fuction to ckeck users guess against actual  answers
 
+    def check_guess(user_try, computer_try):
+        global rounds
+        if user_try == computer_try:
+            print("You got it right!")
+        elif user_try > computer_try:
+            print("Too high.")
+            rounds -= 1
+            print(rounds)
+        elif user_try < computer_try:
+            print('Too low.')
+            rounds -= 1
+            print(rounds)
 
-def check_guess(user_try, computer_try):
-    global rounds
-    if user_try == computer_try:
-        print("You got it right!")
-    elif user_try > computer_try:
-        print("Too high.")
-        rounds -= 1
-        print(rounds)
-    elif user_try < computer_try:
-        print('Too low.')
-        rounds -= 1
-        print(rounds)
-
-
-check_guess(user_try=tentative, computer_try=choosen)
+    check_guess(user_try=tentative, computer_try=choosen)
 
 
 # track the number of turns and reduce by 1 if they get it wrong
