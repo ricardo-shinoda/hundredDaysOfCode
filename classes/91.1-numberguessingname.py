@@ -2,19 +2,26 @@ from random import randint
 
 # Choosing a random number between 1 and 100
 
-choosen = randint(1, 100)
 EASY = 10
 HARD = 5
 rounds = 0
 
-print("Welcome to the Number Guessing Game!")
-print("I'm thinking of a number between 1 and 100.")
-print(choosen)
 
-# Function to set difficulty
+def check_answer(user_try, computer_try, rounds):
+    if user_try > computer_try:
+        print("Too high.")
+        return rounds - 1
+    elif user_try < computer_try:
+        print('Too low.')
+        return rounds - 1
+    else:
+        print(f"You got it right! {user_try}")
 
 
-def level_game():
+# Repeat the guessing functionality if they get it wrong
+
+
+def set_dificulty():
     level = input("Choose a difficulty. Type 'easy' or 'hard': \n")
     if level == 'easy':
         return EASY
@@ -22,33 +29,35 @@ def level_game():
         return HARD
 
 
-rounds = level_game()
+# Let the user guess a number
 
-while rounds >= 1:
 
-    # Let the user guess a number
+def game():
 
-    tentative = int(input('Make a guess: '))
+    # Function to set difficulty
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100.")
+    choosen = randint(1, 100)
+    print(choosen)
 
-    # Fuction to ckeck users guess against actual  answers
+    rounds = set_dificulty()
+    guess = 0
+    while guess != choosen:
+        print(f"You have {rounds} attempts remaining to guess the number.")
+        guess = int(input('Make a guess: '))
+        rounds = check_answer(guess, choosen, rounds)
+        # add an if with the turn
+        if rounds == 0:
+            print("You've ran out of guesses, you lose.")
+            return
+        elif guess != choosen:
+            print("Guess again.")
 
-    def check_guess(user_try, computer_try):
-        global rounds
-        if user_try == computer_try:
-            print("You got it right!")
-        elif user_try > computer_try:
-            print("Too high.")
-            rounds -= 1
-            print(rounds)
-        elif user_try < computer_try:
-            print('Too low.')
-            rounds -= 1
-            print(rounds)
 
-    check_guess(user_try=tentative, computer_try=choosen)
+game()git s
+
+
+# Fuction to ckeck users guess against actual  answers
 
 
 # track the number of turns and reduce by 1 if they get it wrong
-
-
-# Repeat the guessing functionality if they get it wrong
