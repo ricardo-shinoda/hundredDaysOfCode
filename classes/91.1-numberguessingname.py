@@ -54,7 +54,7 @@ def game():
             print("Guess again.")
 
 
-game()git s
+game()
 
 
 # Fuction to ckeck users guess against actual  answers
