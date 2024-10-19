@@ -8,7 +8,7 @@ def gen_one():
 
 
 generating = gen_one()
-print(f'this is generating: {generating}')
+print(f'this is generating (Index 1): {generating}')
 
 
 def followers_first_pick(x):
@@ -18,7 +18,7 @@ def followers_first_pick(x):
 
 
 first_followers = followers_first_pick(generating)
-print(f'this is firsto followers: {first_followers}')
+print(f'this is first followers (count): {first_followers}')
 
 
 def gen_two():
@@ -27,7 +27,7 @@ def gen_two():
 
 
 generating_second = gen_two()
-print(f'This is generating two: {generating_second}')
+print(f'This is generating two (index 2): {generating_second}')
 
 
 def followers_second_pick(x):
@@ -37,7 +37,7 @@ def followers_second_pick(x):
 
 
 second_followers = followers_second_pick(generating_second)
-print(f'This is second followers: {second_followers}')
+print(f'This is second followers (count): {second_followers}')
 
 
 winning = True
@@ -50,6 +50,8 @@ while winning:
             f"Compare A: {path_a['name']}, a {path_a['description']}, from {path_a['country']}")
         followers_a = path_a['follower_count']
         print(followers_a)
+
+        print('***VS***')
 
         path_b = gameData.data[second_choice]
         # path_b = second_pick
@@ -70,17 +72,29 @@ while winning:
     if user_guess == 'A':
         if first_followers > second_followers:
             print(
-                f'You are winning! result 1 is:{first_followers}, result 2 {second_followers}')
+                f'You are winning! result 1 is: {first_followers}, result 2: {second_followers}')  # this is not updating on loop
             generating = generating
             generating_second = gen_two()
             first_followers = followers_first_pick(generating)
-    if user_guess == 'B':
+            second_followers = followers_second_pick(generating_second)
+        else:
+            print('You loose...')
+            print(f'This followers from 1: {first_followers}')
+            print(f'This is followers from 2: {second_followers}')
+            winning = False
+    elif user_guess == 'B':
         if second_followers > first_followers:
             print(
                 f'You are winning! result 2 is: {second_followers}, result one {first_followers}')
             generating = generating_second
             generating_second = gen_two()
             second_followers = followers_first_pick(generating_second)
+            first_followers = followers_second_pick(generating)
+        else:
+            print('You loose...')
+            print(f'This followers from 1: {first_followers}')
+            print(f'This is followers from 2: {second_followers}')
+            winning = False
     else:
         print('You loose...')
         print(f'This followers from 1: {first_followers}')
