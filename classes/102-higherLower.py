@@ -39,6 +39,7 @@ def followers_second_pick(x):
 second_followers = followers_second_pick(generating_second)
 print(f'This is second followers (count): {second_followers}')
 
+counting = 0
 
 winning = True
 # create a compare A
@@ -77,6 +78,8 @@ while winning:
             generating_second = gen_two()
             first_followers = followers_first_pick(generating)
             second_followers = followers_second_pick(generating_second)
+            counting += 1
+            print(f'You score is: {counting}')
         else:
             print('You loose...')
             print(f'This followers from 1: {first_followers}')
@@ -90,13 +93,15 @@ while winning:
             generating_second = gen_two()
             second_followers = followers_first_pick(generating_second)
             first_followers = followers_second_pick(generating)
+            counting += 1
+            print(f'You score is: {counting}')
         else:
-            print('You loose...')
+            print(f'You loose... your score is: {counting}')
             print(f'This followers from 1: {first_followers}')
             print(f'This is followers from 2: {second_followers}')
             winning = False
     else:
-        print('You loose...')
+        print(f'You loose... your score is: {counting}')
         print(f'This followers from 1: {first_followers}')
         print(f'This is followers from 2: {second_followers}')
         winning = False
