@@ -80,10 +80,16 @@ while winning:
             second_followers = followers_second_pick(generating_second)
             counting += 1
             print(f'You score is: {counting}')
+        elif first_followers == second_followers:
+            print(f"It's a draw, please try again")
+            generating = generating
+            generating_second = gen_two()
+            first_followers = followers_first_pick(generating)
+            second_followers = followers_second_pick(generating_second)
         else:
             print('You loose...')
-            print(f'This followers from 1: {first_followers}')
-            print(f'This is followers from 2: {second_followers}')
+            # print(f'This followers from 1: {first_followers}')
+            # print(f'This is followers from 2: {second_followers}')
             winning = False
     elif user_guess == 'B':
         if second_followers > first_followers:
@@ -95,13 +101,19 @@ while winning:
             first_followers = followers_second_pick(generating)
             counting += 1
             print(f'You score is: {counting}')
+        elif second_followers == first_followers:
+            print(f"It's a draw, please try again")
+            generating = generating_second
+            generating_second = gen_two()
+            second_followers = followers_first_pick(generating_second)
+            first_followers = followers_second_pick(generating)
         else:
             print(f'You loose... your score is: {counting}')
-            print(f'This followers from 1: {first_followers}')
-            print(f'This is followers from 2: {second_followers}')
+            # print(f'This followers from 1: {first_followers}')
+            # print(f'This is followers from 2: {second_followers}')
             winning = False
     else:
         print(f'You loose... your score is: {counting}')
-        print(f'This followers from 1: {first_followers}')
-        print(f'This is followers from 2: {second_followers}')
+        # print(f'This followers from 1: {first_followers}')
+        # print(f'This is followers from 2: {second_followers}')
         winning = False
