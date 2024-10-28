@@ -94,7 +94,7 @@ while winning:
     elif user_guess == 'B':
         if second_followers > first_followers:
             print(
-                f'You are winning! result 2 is: {second_followers}, result one {first_followers}')
+                f'You are winning! result 2 is: {second_followers}, result 1 {first_followers}')
             generating = generating_second
             generating_second = gen_two()
             second_followers = followers_first_pick(generating_second)
