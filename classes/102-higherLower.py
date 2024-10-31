@@ -102,7 +102,7 @@ while winning:
             counting += 1
             print(f'You score is: {counting}')
         elif second_followers == first_followers:
-            print(f"It's a draw, please try again")
+            print(f"It's a draw, please try again one more time")
             generating = generating_second
             generating_second = gen_two()
             second_followers = followers_first_pick(generating_second)
