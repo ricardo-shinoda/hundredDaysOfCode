@@ -1,4 +1,9 @@
 from random import randint
 
-random_numnber = randint(0, 49)
-print(random_numnber)
+
+def gen_number():
+    random_number = randint(0, 49)
+    return random_number
+
+resul_gem = gen_number()
+print(resul_gem)
