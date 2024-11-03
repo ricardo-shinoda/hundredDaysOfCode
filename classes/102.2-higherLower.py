@@ -1,4 +1,5 @@
 from random import randint
+import gameData
 
 
 def gen_number():
