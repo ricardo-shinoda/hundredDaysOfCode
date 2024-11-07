@@ -41,7 +41,6 @@ print(f'This is second followers (count): {second_followers}')
 
 
 winning = True
-# create a compare A
 while winning:
     def keep_playing(first_choice, second_choice):
         path_a = gameData.data[first_choice]
@@ -54,11 +53,9 @@ while winning:
         print('***VS***')
 
         path_b = gameData.data[second_choice]
-        # path_b = second_pick
         print(
             f"Compare B: {path_b['name']}, a {path_b['description']}, from {path_b['country']}")
         followers_b = path_b['follower_count']
-        # print(followers_b)
         print(followers_b)
 
         guess = input("Who has more followers? Type 'A' or 'B': ").upper()
