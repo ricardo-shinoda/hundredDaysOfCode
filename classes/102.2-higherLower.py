@@ -1,15 +1,11 @@
-from random import randint
-import gameData
+import random
+from gameData import data
 
+account_a = random.choice(data)
+account_b = random.choice(data)
 
-def gen_number():
-    """Generate a random number"""
-    random_number = randint(0, 49)
-    return random_number
-
-
-resul_gem = gen_number()
-# print(resul_gem)
+if account_a == account_a:
+    account_b = random.choice(data)
 
 
 def description(chosen):
@@ -27,11 +23,15 @@ print(result)
 
 
 def generationg_new():
-    result(resul_gem)
+    response = result(resul_gem)
+    return response
 
 
-first_choice = generationg_new()
-second_choice = generationg_new()
+generator = generationg_new()
+
+
+first_choice = generator
+second_choice = generator
 
 
 def question(a, b):
