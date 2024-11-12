@@ -51,7 +51,7 @@ while game_should_continue:
 
     if is_correct:
         score += 1
-        print(f"You've got it right! Current score: {score}")
+        print(f"You've got it right! Your current score is: {score}")
         # system("clear")
     else:
         print(f"Sorry, you've got it wrong. Final Score: {score}")
