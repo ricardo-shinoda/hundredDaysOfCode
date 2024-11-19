@@ -3,17 +3,20 @@
 # TODO: 1. Prompt user by asking "What would you like? (espresso/latte/cappuccnino): "
 
 action_completed = True
+machine_on = True
 
+while machine_on:
+    def user_decision():
+        """Let the user decise with beverage they will take"""
+        question = input(
+            "What would you like? (espresso/latte/cappuccino):").lower()
+        return question
 
-def user_decision():
-    """Let the user decise with beverage they will take"""
-    question = input(
-        "What would you like? (espresso/latte/cappuccino):").lower()
-    return question
+    user_response = user_decision()
+    print(user_response)
 
-
-user_response = user_decision()
-print(user_response)
+    if user_response == "off":
+        machine_on = False
 
 # TODO: 2. Turn off the coffee machione by entering "off" to the prompt
 
