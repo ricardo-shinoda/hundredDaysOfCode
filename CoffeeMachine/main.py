@@ -15,10 +15,10 @@ while machine_on:
     user_response = user_decision()
     print(user_response)
 
+# TODO: 2. Turn off the coffee machione by entering "off" to the prompt
     if user_response == "off":
         machine_on = False
 
-# TODO: 2. Turn off the coffee machione by entering "off" to the prompt
 
 # TODO: 3. Print report
 
