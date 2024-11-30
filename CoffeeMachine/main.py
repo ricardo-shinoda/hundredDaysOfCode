@@ -1,3 +1,7 @@
+water = 300
+milk = 150
+coffee = 500
+money = 0
 
 
 # TODO: 1. Prompt user by asking "What would you like? (espresso/latte/cappuccnino): "
@@ -13,11 +17,18 @@ while machine_on:
         return question
 
     user_response = user_decision()
-    print(user_response)
+    # print(user_response)
 
 # TODO: 2. Turn off the coffee machione by entering "off" to the prompt
     if user_response == "off":
         machine_on = False
+    elif user_response == "report":
+        print(f"""
+        water: {water},
+        milk: {milk},
+        coffee: {coffee},
+        Money: {money}
+        """)
 
 
 # TODO: 3. Print report
