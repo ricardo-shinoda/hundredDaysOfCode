@@ -1,10 +1,20 @@
 water = 300
-milk = 150
-coffee = 500
+milk = 200
+coffee = 100
 money = 0
 
+# menu
+# espresso: 50ml water, 18g coffee | $1.50
+# latte: 200ml water, 24g coffee, 150ml milk | $2.5
+# cappuccino: 250ml water, 24g coffee, 100ml milk | $3
 
-# TODO: 1. Prompt user by asking "What would you like? (espresso/latte/cappuccnino): "
+# Coins
+# 0.01 Penny
+# 0.05 nickel
+# 0.10 dime
+# 0.25 quar  ter
+
+# TODO: 1. Prompt user by asking "What would you like? (espresso/latte/cappuccino): "
 
 action_completed = True
 machine_on = True
@@ -44,7 +54,7 @@ Money: $2.5
 
 # TODO: 4. Check resources sufficient?
 
-# TODO: 5. Process coins
+# TODO: 5. Proccess coins
 
 # TODO: 6. Check transaction successful?
 
