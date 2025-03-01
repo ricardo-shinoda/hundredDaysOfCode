@@ -4,6 +4,30 @@
 
 action_completed = True
 machine_on = True
+water = 300
+milk = 200
+coffee = 100
+money = 0
+
+quarter_value = 0.25
+dimes_value = 0.10
+nickels_value = 0.05
+pennies_value = 0.01
+
+# espresso = 50ml water, 18g coffee, $1.5
+# latte = 200ml water, 24g coffee, 150ml milk, $2.50
+# cappuccino = 250ml water, 24g coffee, 100ml milk, $3
+
+def value_per_order(quarters, dimes, nickels, pennies):
+    q_total = quarters * quarter_value
+    d_total = dimes * dimes_value
+    n_total = nickels * nickels_value
+    p_total = pennies * pennies_value
+    total = q_total + d_total + n_total + p_total
+    return total
+
+
+
 
 while machine_on:
     def user_decision():
@@ -13,11 +37,25 @@ while machine_on:
         return question
 
     user_response = user_decision()
-    print(user_response)
+    # print(user_response)
 
 # TODO: 2. Turn off the coffee machione by entering "off" to the prompt
     if user_response == "off":
         machine_on = False
+    elif user_response ==  "report":
+        print(f'Water: {water}ml')
+        print(f'Water: {milk}ml')
+        print(f'Water: {coffee}g')
+        print(f'Water: ${money}')
+    elif user_response == 'espresso':
+        print('Plese insert coins.')
+        quarters = float(input('How many quarters?: '))
+        dimes = float(input('How many dimes?: '))
+        nickels = float(input('How many nickels?: '))
+        pennies = float(input('How many pennies?: '))
+
+        order_amount = value_per_order(quarters=quarters, dimes=dimes, nickels=nickels, pennies=pennies)
+        print(order_amount)
 
 
 # TODO: 3. Print report
